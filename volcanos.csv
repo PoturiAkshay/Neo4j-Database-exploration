@@ -1,0 +1,7 @@
+﻿Continent,Continent_id,Name,Location,Lat,Long,Notes,Type,Last_VEI
+North America,1,Long Valley Caldera,East Central California,37.72,-118.88,NA,Supervolcano,7
+North America,1,Valles Caldera,New Mexico,35.9,-106.53,NA,Supervolcano,7
+Asia,2,Lake Toba,"North Sumatra, Indonesia",2.79,98.62,"75,000 years ago",Supervolcano,8
+Asia,2,Aira Caldera,"Kagoshima, Japan",31.59,130.66,NA,Supervolcano,7
+Oceania,3,Taupo Caldera,New Zealand,-38.8,175.9,NA,Supervolcano,8
+North America,1,Yellowstone Caldera,Yellowstone national park,44.41,-110.72,640000 years ago,Supervolcano,8

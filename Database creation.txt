@@ -1,0 +1,23 @@
+LOAD CSV WITH HEADERS FROM 'file:///volcanos.csv' AS row
+MERGE (continent:continent{name:row.Continent})
+MERGE (volcano:volcano {name: row.Name,location:row.Location,latitude:row.Lat,longitude:row.Long,Notes:row.Notes,Last_VEI:row.Last_VEI})
+
+
+MERGE (continent)-[:HAS_VOLCANO]->(volcano)
+
+Match(continent1:continent)
+Match(continent2:continent)
+WHERE continent1<>continent2
+create(continent1)-[:Neighbor]->(continent2)
+
+Match(continent1:continent)
+Match(continent2:continent)
+Match(volcano1:volcano)
+Match(volcano2:volcano)
+where (continent1)-[:HAS_VOLCANO]->(volcano1) and (continent2)-[:HAS_VOLCANO]->(volcano2) and volcano1<>volcano2 and continent1 = continent2
+create(volcano1)-[:NEIGHBOUR]->(volcano2)
+
+
+MATCH ((continent)-[:HAS_VOLCANO]->(volcano)) return continent, collect(volcano) as volcano order by size(volcano) desc limit 1
+
+match(n) detach delete n
